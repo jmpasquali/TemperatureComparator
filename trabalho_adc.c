@@ -161,7 +161,7 @@ void enviaDigito(int valor) {
         PORTB = 0x00;
 }
 
-void mostraTemp() {
+void mostraTemp() { // Shows temperature from LM35 to 7seg displays
 
     int temperatura;
 
@@ -183,15 +183,19 @@ void mostraTemp() {
 
 void main(void) {
 
-    //IOs onde 0=out e 1=in     
-    TRISB = 0b00000000; //0x00; 
-    TRISC = 0b00000000; //0x00; 
+    // Set ports     
+    TRISB = 0b00000000;  
+    TRISC = 0b00000000;
+    
     ADC_Init();
+    
+    //  PIC's analog comparator configuration
     CMCON = 0b00110101;
 
     PORTB = 0x00;
     PORTD = 0b00011100;
     
+    //Blinks LED if temperature read by LM35 is higher than 100 C
     while (1) {
 
         ALERTA_3 = 1;
