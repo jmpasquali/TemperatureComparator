@@ -195,7 +195,7 @@ void main(void) {
     PORTB = 0x00;
     PORTD = 0b00011100;
     
-    //Blinks LED if temperature read by LM35 is higher than 100 C
+    //Blinks LED if temperature read by LM35 is above 100 C
     while (1) {
 
         ALERTA_3 = 1;
