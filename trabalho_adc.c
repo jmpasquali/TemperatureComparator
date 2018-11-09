@@ -77,7 +77,6 @@
 
 #include <xc.h>
 #include <stdio.h>
-#include "My_adc.h"
 
 #define _XTAL_FREQ 20000000     // Usar cristal de 20MHz  	
 
